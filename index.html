@@ -3,214 +3,33 @@
 
 <head>
     <title></title>
-    <style type="text/css">
-    	body{
-    		background-color: gray;
-    		background-repeat: none;
-    		background-size: cover;
-    	}
-        .contain {
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-        }       
-        .div {
-            display: grid;
-            border: 5px solid;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0px 0px;
-            width: 300px;
-            height: 400px;
-            border-radius: 20px;
-            margin-top: 20px;
-        }        
-        .div button {
-            margin-left: 30%;
-            background-color: #996666;
-        }  
-        img {
-            width: 150px;
-            height: 200px;
-            border: 2px solid;
-            border-radius: 20px;
-        }        
-        p {
-            color: red;
-        }
-        
-        .div2 {
-            display: flex;
-            justify-content: space-between;
-        }
-        .content {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        h1 {
-            color: red;
-        }
-        .header {
-            display: flex;
-        }
-        .tops input{
-            width: 400px;
-            height: 30px;
-            border-radius: 10px;
-       }
-        .tops{
-        	display: flex;
-        	justify-content: space-between;
-            background-color: #867979;
-        }
-        .tops button {
-            width: 70px;
-            height: 30px;
-            border-radius: 10px;
-        }
-        .button {
-            width: 60px;
-            height: 30px;
-            border-radius: 30px;
-
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div class="tops";>
-        <div>
-            <img src="Logo.png">
+        <div style="margin-top: 10px; margin-left: 20px;">
+            <img src="imgs/Logo.png">
             <h2>BELLE SHOP</h2>
+            <button onclick="displaycart()" style="background-color: #00ffff;">CART</button>
         </div>
-        <div>
-            <input type="search" id="search_info_product"
-            placeholder="Enter name product you are finding">
-            <button type="button" class="btn btn-dark">SEARCH</button>
+
+         <div>
+             <div style="margin-top: 10px; margin-right: 20px;">
+                <a href="#">HOME</a>
+                <a href="#">WOMEN'S FASHION</a>
+                <a href="#">MEN'S FASHION</a>
+                <a href="#">CONTACT</a>
+                <a href="#">ADD PRODUCT</a>
+            </div>
+            <div style="margin-top: 10px; margin-right: 20px;  margin-top: 200px;">
+                <input type="search" id="search" placeholder="Enter name product you are finding">
+                <button onclick = "Search()"type="button" class="btn btn-dark">SEARCH</button>
+            </div> 
         </div>
     </div>
-    <div id="container1"></div>
-    <script type="text/javascript">
-            var product1 = {
-            imag: "anh1.jpg",
-            name: "DRESS",
-            made: "CHINA",
-            price: 6000
-        }
-        var product2 = {
-            imag: "anh2.jpg",
-            name: "PANTS",
-            made: "VIET NAME",
-            price: 40000
-        }
-        var product3 = {
-            imag: "anh3.jpg",
-            name: "SHORT DRESS",
-            made: "LAOS",
-            price: 12230
-        }
-        var product4 = {
-            imag: "anh4.jpg",
-            name: "LONG DRESS",
-            made: "THAILAND",
-            price: 1630
-        }
-        var product5 = {
-            imag: "anh5.jpg",
-            name: "VEST COUNPBLE",
-            made: "JAPAN",
-            price: 11243
-        }
-        var product6 = {
-            imag: "girl-01.jpg",
-            name: "DRESS WHITE",
-            made: "ENGLAND",
-            price: 11323
-        }
-        var product7 = {
-            imag: "men-02.jpg",
-            name: "VEST MAN",
-            made: "QUANG TRI",
-            price: 11623
-        }
-         var product8 = {
-            imag: "men-03.jpg",
-            name: "VEST",
-            made: "DAKRONG",
-            price: 11200
-        }
-        var pr = [product1, product2, product3, product4, product5, product6, product7, product8];
-        var product = [];
-        var contain1 = document.getElementById("container1");
-       var product = [];
-        var contain1 = document.getElementById("container1");
-        pushProduct();
-        function pushProduct() {
-            for (var i = 0; i < pr.length; i++) {
-                var div1 = document.createElement("div");
-                var Pimag = document.createElement("img");
-                var Pname = document.createElement("b");
-                var Pmade = document.createElement("b");
-                var Pprice = document.createElement("p");
-                var btadd = document.createElement("button");
-                div1.className = "div";
-                btadd.className = "button";
-                contain1.className = "contain";
-                Pname.innerText = pr[i].name;
-                Pimag.src = pr[i].imag;
-                Pmade.innerText = pr[i].made;
-                Pprice.innerText = pr[i].price + " VND";
-                btadd.innerText = "ADD";
-                div1.appendChild(Pimag);
-                div1.appendChild(Pname);
-                div1.appendChild(Pmade);
-                div1.appendChild(Pprice);
-                div1.appendChild(btadd);
-                contain1.appendChild(div1);
-                btadd.onclick = function(arg) {
-                    return function() {
-                        product.push(pr[arg]);
-                        document.getElementById("container-cart").innerHTML = "";
-                        displayCart();
-                    }
-                }(i)
-            }
-        }
-        function Search(){
-        	var search = document.getElementById("input1").value;
-        	for(var i =0; i<pr.length;i++){
-        		if (search == pr[i].name) {
-        			document.getElementById("container1").innerHTML = "";
-        			var div1 = document.createElement("div");
-	                var Pimag = document.createElement("img");
-	                var Pname = document.createElement("p");
-	                var Pmade = document.createElement("p");
-	                var Pprice = document.createElement("b");
-	                var btadd = document.createElement("button");
-	                div1.className = "div";
-	                contain1.className = "contain";
-	                Pname.innerText = pr[i].name;
-	                Pimag.src = pr[i].imag;
-	                Pmade.innerText = pr[i].made;
-	                Pprice.innerText = pr[i].price;
-	                btadd.innerText = "Add";
-	                div1.appendChild(Pimag);
-	                div1.appendChild(Pname);
-	                div1.appendChild(Pmade);
-	                div1.appendChild(Pprice);
-	                div1.appendChild(btadd);
-	                contain1.appendChild(div1);
-	                btadd.onclick = function(arg) {
-                    return function() {
-                        product.push(pr[arg]);
-                        document.getElementById("container-cart").innerHTML = "";
-                        displayCart();
-                    }
-                }(i)
-        		}
-        	}
-        }
-    </script>
-</body>
 
+    <div id="container1"></div>
+    <script src="indexsimple.js"></script>
+</body>
+    
 </html>
