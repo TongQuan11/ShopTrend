@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="tops";>
+    <div class="tops" ;>
         <div style="margin-top: 10px; margin-left: 20px;">
             <img src="imgs/Logo.png">
             <h2>BELLE SHOP</h2>
             <button onclick="displaycart()" style="background-color: #00ffff;">CART</button>
         </div>
-
-         <div>
-             <div style="margin-top: 10px; margin-right: 20px;">
-                <a href="#">HOME</a>
-                <a href="#">WOMEN'S FASHION</a>
-                <a href="#">MEN'S FASHION</a>
-                <a href="#">CONTACT</a>
-                <a href="#">ADD PRODUCT</a>
+        <div>
+            <div style="margin-top: 10px; margin-right: 20px; display: flex;padding-left: 5px;">
+                <h3 onclick=" displayProduct()">HOME</h3>
+                <h3 onclick=" displayPrfemale()">WOMEN'S FASHION</h3>
+                <h3 onclick=" displayPrmale()">MEN'S FASHION</h3>
             </div>
             <div style="margin-top: 10px; margin-right: 20px;  margin-top: 200px;">
                 <input type="search" id="search" placeholder="Enter name product you are finding">
-                <button onclick = "Search()"type="button" class="btn btn-dark">SEARCH</button>
-            </div> 
+                <button onclick="Search()" type="button" class="btn btn-dark">SEARCH</button>
+            </div>
         </div>
     </div>
-
     <div id="container1"></div>
-    <script src="indexsimple.js"></script>
+    <script src="funtion.js"></script>
 </body>
-    
 </html>
