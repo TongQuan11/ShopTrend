@@ -362,7 +362,6 @@
             inputPhone.innerText = " ";
             message.innerText = "Product";
             images.src = cart[arg].imag;
-
             line.appendChild(customer);
             line.appendChild(name);
             line.appendChild(inputName);
